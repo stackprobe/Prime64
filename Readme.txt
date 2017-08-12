@@ -15,10 +15,3 @@ http://www.vector.co.jp/soft/winnt/edu/se510601.html
 うちのサイト
 http://stackprobe.dip.jp/Prime64
 
-
-マニュアル
-----------
-
-https://github.com/stackprobe/Prime64/blob/master/doc/Readme.txt
-
-
