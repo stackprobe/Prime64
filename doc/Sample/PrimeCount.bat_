@@ -1,0 +1,2 @@
+..\Prime64.exe /BC PrimeCountIn.csv PrimeCountOut.csv
+PAUSE

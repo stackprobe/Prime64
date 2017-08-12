@@ -1,0 +1,2 @@
+..\Prime64.exe /BP PrimeIn.csv PrimeOut.csv
+PAUSE

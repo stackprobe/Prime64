@@ -1,0 +1,2 @@
+..\Prime64.exe /BF PrimeIn.csv FactorizationOut.csv
+PAUSE
