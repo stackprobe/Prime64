@@ -1,5 +1,5 @@
 IF NOT EXIST .\GitRelease.bat GOTO END
 CALL qq
-C:\Factory\SubTools\GitFactory.exe /ow . C:\home\GitHub\Prime64
+C:\Factory\SubTools\GitFactory.exe /ow . C:\huge\GitHub\Prime64
 rem CALL C:\var\go.bat
 :END
