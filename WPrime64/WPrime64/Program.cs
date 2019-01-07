@@ -31,13 +31,7 @@ namespace WPrime64
 				CheckSelfDir();
 				CheckCopiedExe();
 
-				Logger.Clear();
-
-#if false // test
-				Logger.WriteLog("LOG_TEST_01");
-				Logger.WriteLog("LOG_TEST_02");
-				Logger.WriteLog("LOG_TEST_03");
-#endif
+				SystemTools.AntiWindowsDefenderSmartScreen();
 
 				Gnd.I.LoadSettingData();
 

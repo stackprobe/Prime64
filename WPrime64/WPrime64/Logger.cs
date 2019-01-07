@@ -16,25 +16,16 @@ namespace WPrime64
 			}
 		}
 
-		public static void Clear()
-		{
-			File.Delete(LOG_FILE);
-		}
-
-		private static int WL_Count = 0;
+		private static long WL_Count = 0;
 
 		public static void WriteLog(object e)
 		{
 			try
 			{
-				if (1000 < WL_Count)
-					return;
-
-				using (StreamWriter sw = new StreamWriter(LOG_FILE, true, StringTools.ENCODING_SJIS))
+				using (StreamWriter writer = new StreamWriter(LOG_FILE, WL_Count++ % 1000 != 0, StringTools.ENCODING_SJIS))
 				{
-					sw.WriteLine("[" + DateTime.Now + "." + WL_Count + "] " + e);
+					writer.WriteLine("[" + DateTime.Now + "." + WL_Count.ToString("D3") + "] " + e);
 				}
-				WL_Count++;
 			}
 			catch
 			{ }

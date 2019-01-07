@@ -59,5 +59,43 @@ namespace WPrime64
 		}
 
 		public delegate void Perform_d();
+
+		public static void AntiWindowsDefenderSmartScreen()
+		{
+			bool 初回起動Flag = File.Exists(Logger.LOG_FILE) == false;
+
+			Logger.WriteLog("awdss_1");
+
+			if (初回起動Flag)
+			{
+				Logger.WriteLog("awdss_2");
+
+				foreach (string exeFile in Directory.GetFiles(BootTools.SelfDir, "*.exe", SearchOption.TopDirectoryOnly))
+				{
+					try
+					{
+						Logger.WriteLog("awdss_exeFile: " + exeFile);
+
+						if (exeFile.ToLower() == BootTools.SelfFile.ToLower())
+						{
+							Logger.WriteLog("awdss_self_noop");
+						}
+						else
+						{
+							byte[] exeData = File.ReadAllBytes(exeFile);
+							File.Delete(exeFile);
+							File.WriteAllBytes(exeFile, exeData);
+						}
+						Logger.WriteLog("awdss_OK");
+					}
+					catch (Exception e)
+					{
+						Logger.WriteLog(e);
+					}
+				}
+				Logger.WriteLog("awdss_3");
+			}
+			Logger.WriteLog("awdss_4");
+		}
 	}
 }
