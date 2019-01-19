@@ -97,6 +97,8 @@ namespace WPrime64
 			this.Resized_Tabウラムの螺旋();
 			this.US_Changed(true);
 			this.MinValue.Focus();
+
+			SystemTools.PostShown(this);
 		}
 
 		private void MainWin_FormClosed(object sender, FormClosedEventArgs e)
