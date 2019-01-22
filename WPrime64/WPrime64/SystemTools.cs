@@ -61,6 +61,8 @@ namespace WPrime64
 
 		public delegate void Perform_d();
 
+		// sync > @ AntiWindowsDefenderSmartScreen
+
 		public static void AntiWindowsDefenderSmartScreen()
 		{
 			bool 初回起動Flag = File.Exists(Logger.LOG_FILE) == false;
@@ -98,6 +100,10 @@ namespace WPrime64
 			}
 			Logger.WriteLog("awdss_4");
 		}
+
+		// < sync
+
+		// sync > @ PostShown
 
 		public static void PostShown(Form f)
 		{
@@ -145,5 +151,7 @@ namespace WPrime64
 				}
 			}
 		}
+
+		// < sync
 	}
 }
