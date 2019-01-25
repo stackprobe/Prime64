@@ -6,6 +6,8 @@ using System.IO;
 
 namespace WPrime64
 {
+	// sync > @ BootTools
+
 	public class BootTools
 	{
 		public static string SelfFile;
@@ -19,4 +21,6 @@ namespace WPrime64
 			Directory.SetCurrentDirectory(SelfDir);
 		}
 	}
+
+	// < sync
 }
