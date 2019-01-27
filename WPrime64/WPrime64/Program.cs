@@ -30,6 +30,7 @@ namespace WPrime64
 				CheckSelfDir();
 				CheckCopiedExe();
 
+				SystemTools.初回起動Flag = File.Exists(Logger.LOG_FILE) == false;
 				SystemTools.AntiWindowsDefenderSmartScreen();
 
 				Gnd.I.LoadSettingData();

@@ -65,23 +65,21 @@ namespace WPrime64
 
 		public static void AntiWindowsDefenderSmartScreen()
 		{
-			bool 初回起動Flag = File.Exists(Logger.LOG_FILE) == false;
+			WriteLog("awdss_1");
 
-			Logger.WriteLog("awdss_1");
-
-			if (初回起動Flag)
+			if (Is初回起動())
 			{
-				Logger.WriteLog("awdss_2");
+				WriteLog("awdss_2");
 
 				foreach (string exeFile in Directory.GetFiles(BootTools.SelfDir, "*.exe", SearchOption.TopDirectoryOnly))
 				{
 					try
 					{
-						Logger.WriteLog("awdss_exeFile: " + exeFile);
+						WriteLog("awdss_exeFile: " + exeFile);
 
 						if (exeFile.ToLower() == BootTools.SelfFile.ToLower())
 						{
-							Logger.WriteLog("awdss_self_noop");
+							WriteLog("awdss_self_noop");
 						}
 						else
 						{
@@ -89,19 +87,31 @@ namespace WPrime64
 							File.Delete(exeFile);
 							File.WriteAllBytes(exeFile, exeData);
 						}
-						Logger.WriteLog("awdss_OK");
+						WriteLog("awdss_OK");
 					}
 					catch (Exception e)
 					{
-						Logger.WriteLog(e);
+						WriteLog(e);
 					}
 				}
-				Logger.WriteLog("awdss_3");
+				WriteLog("awdss_3");
 			}
-			Logger.WriteLog("awdss_4");
+			WriteLog("awdss_4");
 		}
 
 		// < sync
+
+		public static bool 初回起動Flag;
+
+		public static bool Is初回起動()
+		{
+			return 初回起動Flag;
+		}
+
+		public static void WriteLog(object message)
+		{
+			Logger.WriteLog(message);
+		}
 
 		// sync > @ PostShown
 
@@ -129,6 +139,13 @@ namespace WPrime64
 						{
 							controlTable.Add(tp.Controls);
 						}
+					}
+					SplitContainer sc = control as SplitContainer;
+
+					if (sc != null)
+					{
+						controlTable.Add(sc.Panel1.Controls);
+						controlTable.Add(sc.Panel2.Controls);
 					}
 					TextBox tb = control as TextBox;
 
