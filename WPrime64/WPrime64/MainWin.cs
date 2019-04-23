@@ -162,48 +162,12 @@ namespace WPrime64
 				if (maxval < minval)
 					throw new Exception("[最小値] に [最大値] より大きな値が入力されています。");
 
-				string outFile = null;
-
-				{
-					//SaveFileDialogクラスのインスタンスを作成
-					SaveFileDialog sfd = new SaveFileDialog();
-
-					//はじめのファイル名を指定する
-					//sfd.FileName = "新しいファイル.html";
-					sfd.FileName = "Prime_" + minval + "-" + maxval + ".txt";
-					//はじめに表示されるフォルダを指定する
-					//sfd.InitialDirectory = @"C:\";
-					//sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-					sfd.InitialDirectory = Directory.GetCurrentDirectory();
-					//[ファイルの種類]に表示される選択肢を指定する
-					sfd.Filter =
-						//"HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
-						"テキストファイル(*.txt)|*.txt|すべてのファイル(*.*)|*.*";
-					//[ファイルの種類]ではじめに
-					//「すべてのファイル」が選択されているようにする
-					//sfd.FilterIndex = 2;
-					sfd.FilterIndex = 1;
-					//タイトルを設定する
-					//sfd.Title = "保存先のファイルを選択してください";
-					sfd.Title = "出力ファイルを指定してください";
-					//ダイアログボックスを閉じる前に現在のディレクトリを復元するようにする
-					sfd.RestoreDirectory = true;
-					//既に存在するファイル名を指定したとき警告する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.OverwritePrompt = true;
-					//存在しないパスが指定されたとき警告を表示する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.CheckPathExists = true;
-
-					//ダイアログを表示する
-					if (sfd.ShowDialog() == DialogResult.OK)
-					{
-						//OKボタンがクリックされたとき
-						//選択されたファイル名を表示する
-						//Console.WriteLine(sfd.FileName);
-						outFile = sfd.FileName;
-					}
-				}
+				string outFile = SaveLoadDialogs.SaveFile(
+					"出力ファイルを指定してください",
+					"テキスト:txt",
+					Directory.GetCurrentDirectory(),
+					"Prime_" + minval + "-" + maxval + ".txt"
+					);
 
 				if (outFile == null)
 					return;
@@ -513,48 +477,12 @@ namespace WPrime64
 				if (maxval < minval)
 					throw new Exception("[最小値] に [最大値] より大きな値が入力されています。");
 
-				string outFile = null;
-
-				{
-					//SaveFileDialogクラスのインスタンスを作成
-					SaveFileDialog sfd = new SaveFileDialog();
-
-					//はじめのファイル名を指定する
-					//sfd.FileName = "新しいファイル.html";
-					sfd.FileName = "PrimeCount_" + minval + "-" + maxval + ".txt";
-					//はじめに表示されるフォルダを指定する
-					//sfd.InitialDirectory = @"C:\";
-					//sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-					sfd.InitialDirectory = Directory.GetCurrentDirectory();
-					//[ファイルの種類]に表示される選択肢を指定する
-					sfd.Filter =
-						//"HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
-						"テキストファイル(*.txt)|*.txt|すべてのファイル(*.*)|*.*";
-					//[ファイルの種類]ではじめに
-					//「すべてのファイル」が選択されているようにする
-					//sfd.FilterIndex = 2;
-					sfd.FilterIndex = 1;
-					//タイトルを設定する
-					//sfd.Title = "保存先のファイルを選択してください";
-					sfd.Title = "出力ファイルを指定してください";
-					//ダイアログボックスを閉じる前に現在のディレクトリを復元するようにする
-					sfd.RestoreDirectory = true;
-					//既に存在するファイル名を指定したとき警告する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.OverwritePrompt = true;
-					//存在しないパスが指定されたとき警告を表示する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.CheckPathExists = true;
-
-					//ダイアログを表示する
-					if (sfd.ShowDialog() == DialogResult.OK)
-					{
-						//OKボタンがクリックされたとき
-						//選択されたファイル名を表示する
-						//Console.WriteLine(sfd.FileName);
-						outFile = sfd.FileName;
-					}
-				}
+				string outFile = SaveLoadDialogs.SaveFile(
+					"出力ファイルを指定してください",
+					"テキスト:txt",
+					Directory.GetCurrentDirectory(),
+					"PrimeCount_" + minval + "-" + maxval + ".txt"
+					);
 
 				if (outFile == null)
 					return;
@@ -883,48 +811,12 @@ namespace WPrime64
 				this.EC_Load(this.BtnCenterColor);
 				string centerColor = this.EC_RefStrColor;
 
-				string outFile = null;
-
-				{
-					//SaveFileDialogクラスのインスタンスを作成
-					SaveFileDialog sfd = new SaveFileDialog();
-
-					//はじめのファイル名を指定する
-					//sfd.FileName = "新しいファイル.html";
-					sfd.FileName = "UlamSpiral_" + l + "_" + t + "_" + r + "_" + b + ".bmp";
-					//はじめに表示されるフォルダを指定する
-					//sfd.InitialDirectory = @"C:\";
-					//sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-					sfd.InitialDirectory = Directory.GetCurrentDirectory();
-					//[ファイルの種類]に表示される選択肢を指定する
-					sfd.Filter =
-						//"HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";
-						"ビットマップファイル(*.bmp)|*.bmp|すべてのファイル(*.*)|*.*";
-					//[ファイルの種類]ではじめに
-					//「すべてのファイル」が選択されているようにする
-					//sfd.FilterIndex = 2;
-					sfd.FilterIndex = 1;
-					//タイトルを設定する
-					//sfd.Title = "保存先のファイルを選択してください";
-					sfd.Title = "出力ファイルを指定してください";
-					//ダイアログボックスを閉じる前に現在のディレクトリを復元するようにする
-					sfd.RestoreDirectory = true;
-					//既に存在するファイル名を指定したとき警告する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.OverwritePrompt = true;
-					//存在しないパスが指定されたとき警告を表示する
-					//デフォルトでTrueなので指定する必要はない
-					sfd.CheckPathExists = true;
-
-					//ダイアログを表示する
-					if (sfd.ShowDialog() == DialogResult.OK)
-					{
-						//OKボタンがクリックされたとき
-						//選択されたファイル名を表示する
-						//Console.WriteLine(sfd.FileName);
-						outFile = sfd.FileName;
-					}
-				}
+				string outFile = SaveLoadDialogs.SaveFile(
+					"出力ファイルを指定してください",
+					"ビットマップ:bmp",
+					Directory.GetCurrentDirectory(),
+					"UlamSpiral_" + l + "_" + t + "_" + r + "_" + b + ".bmp"
+					);
 
 				if (outFile == null)
 					return;
