@@ -286,7 +286,7 @@ namespace WPrime64
 			return 3 <= path.Length && (ALPHA + alpha).Contains(path[0]) && path[1] == ':' && path[2] == '\\';
 		}
 
-		private const string OUT_PFX = "*[Prime64_OUT-PFX]:";
+		public static readonly string OUT_PFX = Guid.NewGuid().ToString("B");
 
 		public static string[] Prime64StdoutFilter(string[] lines)
 		{

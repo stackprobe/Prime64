@@ -224,7 +224,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//O \"" + outFile + "\" /P " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /P " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
@@ -299,7 +299,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//O \"" + outFile + "\" /LH " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /LH " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
@@ -362,7 +362,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//O \"" + outFile + "\" /F " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /F " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
