@@ -1,184 +1,184 @@
 ----
-����
+注意
 
-	���s�t�@�C���Ɠ����ꏊ�� Prime.dat (268,435,456 �o�C�g) ���쐬���܂��B
-	Prime64.exe �͂��̃t�@�C�����폜���܂���B�s�p�ł���΁u�v���O�����I����v�蓮�ō폜���ĉ������B
+	実行ファイルと同じ場所に Prime.dat (268,435,456 バイト) を作成します。
+	Prime64.exe はこのファイルを削除しません。不用であれば「プログラム終了後」手動で削除して下さい。
 
-	Prime64.exe �͑��d�N���\�ł��B
-	Prime64.exe �͒P��X���b�h�œ��삵�܂��B
+	Prime64.exe は多重起動可能です。
+	Prime64.exe は単一スレッドで動作します。
 
-	�W���o�͂̊e�s�̍ŏ��� *[Prime64_OUT-PFX]: ��}�����邱�Ƃ�����܂��B
+	標準出力の各行の最初に *[Prime64_OUT-PFX]: を挿入することがあります。
 
-	WPrime64.exe ���s���� Prime64.exe ���g�p���Ȃ��ŉ������B
+	WPrime64.exe 実行中は Prime64.exe を使用しないで下さい。
 
 
 ----
-�R�}���h����
+コマンド引数
 
 	> Prime64.exe /P n
 
-		n ... 0 �` 18446744073709551615 �̐���
+		n ... 0 ～ 18446744073709551615 の整数
 
-		n ���f���ł���� IS_PRIME, �����łȂ���� IS_NOT_PRIME ��\�����܂��B
+		n が素数であれば IS_PRIME, そうでなければ IS_NOT_PRIME を表示します。
 
 	> Prime64.exe /F n
 
-		n ... 0 �` 18446744073709551615 �̐���
+		n ... 0 ～ 18446744073709551615 の整数
 
-		n ��f�����������A���ʂ�\�����܂��B
-		1 �̏ꍇ�� 1 ��\�����܂��B
-		0 �̏ꍇ�͉����\�����܂���B
+		n を素因数分解し、結果を表示します。
+		1 の場合は 1 を表示します。
+		0 の場合は何も表示しません。
 
 	> Prime64.exe /L n
 
-		n ... 0 �` 18446744073709551615 �̐���
+		n ... 0 ～ 18446744073709551615 の整数
 
-		n ��菬�����ő�̑f����\�����܂��B�Y������f����������� 0 ��\�����܂��B
+		n より小さい最大の素数を表示します。該当する素数が無ければ 0 を表示します。
 
 	> Prime64.exe /H n
 
-		n ... 0 �` 18446744073709551615 �̐���
+		n ... 0 ～ 18446744073709551615 の整数
 
-		n ���傫���ŏ��̑f����\�����܂��B�Y������f���� 2^64 �ȏ�̏ꍇ�� 0 ��\�����܂��B
+		n より大きい最小の素数を表示します。該当する素数が 2^64 以上の場合は 0 を表示します。
 
 	> Prime64.exe /LH n
 
-		n ... 0 �` 18446744073709551615 �̐���
+		n ... 0 ～ 18446744073709551615 の整数
 
-		�ȉ���\�����܂��B
-		�En ��菬�����ő�̑f��, �Y������f����������� 0
-		�En ���傫���ŏ��̑f��, �Y������f���� 2^64 �ȏ�̏ꍇ�� 0
+		以下を表示します。
+		・n より小さい最大の素数, 該当する素数が無ければ 0
+		・n より大きい最小の素数, 該当する素数が 2^64 以上の場合は 0
 
 	> Prime64.exe /R MIN-VAL MAX-VAL OUT-FILE
 
-		MIN-VAL  ... �ŏ��l, 0 �` 18446744073709551615 �̐���
-		MAX-VAL  ... �ő�l, 0 �` 18446744073709551615 �̐���
-		OUT-FILE ... �o�̓t�@�C��
+		MIN-VAL  ... 最小値, 0 ～ 18446744073709551615 の整数
+		MAX-VAL  ... 最大値, 0 ～ 18446744073709551615 の整数
+		OUT-FILE ... 出力ファイル
 
-		�ŏ��l����ő�l�܂ł̑f�����o�̓t�@�C���ɏo�͂��܂��B
-		�Y������f������������ꍇ�A���������ɏo�͂��܂��B
-		�o�̓t�@�C���� US-ASCII �̃e�L�X�g�t�@�C���ł��B
+		最小値から最大値までの素数を出力ファイルに出力します。
+		該当する素数が複数ある場合、小さい順に出力します。
+		出力ファイルは US-ASCII のテキストファイルです。
 
 	> Prime64.exe /C MIN-VAL MAX-VAL OUT-FILE
 
-		MIN-VAL  ... �ŏ��l, 0 �` 18446744073709551615 �̐���
-		MAX-VAL  ... �ő�l, 0 �` 18446744073709551615 �̐���
-		OUT-FILE ... �o�̓t�@�C��
+		MIN-VAL  ... 最小値, 0 ～ 18446744073709551615 の整数
+		MAX-VAL  ... 最大値, 0 ～ 18446744073709551615 の整数
+		OUT-FILE ... 出力ファイル
 
-		�ŏ��l����ő�l�܂ł̑f���́u���v���o�̓t�@�C���ɏo�͂��܂��B
-		�o�̓t�@�C���� US-ASCII �̃e�L�X�g�t�@�C���ł��B
+		最小値から最大値までの素数の「個数」を出力ファイルに出力します。
+		出力ファイルは US-ASCII のテキストファイルです。
 
 	> Prime64.exe /BP IN-CSV-FILE OUT-CSV-FILE
 
-		IN-CSV-FILE  ... ���̓t�@�C��
-		OUT-CSV-FILE ... �o�̓t�@�C��
+		IN-CSV-FILE  ... 入力ファイル
+		OUT-CSV-FILE ... 出力ファイル
 
-		�f������̈ꊇ���������s���܂��B
-		���̓t�@�C���ɂ� US-ASCII �̃J���}��؂� CSV �t�@�C�����w�肵�ĉ������B
-		���̓t�@�C���̊e�s�͈ȉ��̂悤�ɂ��܂��B
+		素数判定の一括処理を実行します。
+		入力ファイルには US-ASCII のカンマ区切り CSV ファイルを指定して下さい。
+		入力ファイルの各行は以下のようにします。
 
-			���͒l�i0 �` 18446744073709551615 �̐����j
+			入力値（0 ～ 18446744073709551615 の整数）
 
-		�o�̓t�@�C���� US-ASCII �̃J���}��؂� CSV �t�@�C���ł��B
-		�o�̓t�@�C���̊e�s�͈ȉ��̂悤�ɂȂ�܂��B
+		出力ファイルは US-ASCII のカンマ区切り CSV ファイルです。
+		出力ファイルの各行は以下のようになります。
 
-			���͒l, ���茋�ʁi�f���ł���� 1, �����łȂ���� 0 ���o�͂��܂��j
+			入力値, 判定結果（素数であれば 1, そうでなければ 0 を出力します）
 
-		��Sample�t�H���_�� Prime.bat ���Q�l�ɂ��ĉ������B
+		★Sampleフォルダの Prime.bat を参考にして下さい。
 
 	> Prime64.exe /BF IN-CSV-FILE OUT-CSV-FILE
 
-		IN-CSV-FILE  ... ���̓t�@�C��
-		OUT-CSV-FILE ... �o�̓t�@�C��
+		IN-CSV-FILE  ... 入力ファイル
+		OUT-CSV-FILE ... 出力ファイル
 
-		�f���������̈ꊇ���������s���܂��B
-		���̓t�@�C���ɂ� US-ASCII �̃J���}��؂� CSV �t�@�C�����w�肵�ĉ������B
-		���̓t�@�C���̊e�s�͈ȉ��̂悤�ɂ��܂��B
+		素因数分解の一括処理を実行します。
+		入力ファイルには US-ASCII のカンマ区切り CSV ファイルを指定して下さい。
+		入力ファイルの各行は以下のようにします。
 
-			���͒l�i0 �` 18446744073709551615 �̐����j
+			入力値（0 ～ 18446744073709551615 の整数）
 
-		�o�̓t�@�C���� US-ASCII �̃J���}��؂� CSV �t�@�C���ł��B
-		�o�̓t�@�C���̊e�s�͈ȉ��̂悤�ɂȂ�܂��B
+		出力ファイルは US-ASCII のカンマ区切り CSV ファイルです。
+		出力ファイルの各行は以下のようになります。
 
-			���͒l, �f�����̌�, �f����, �f����, �f����...
+			入力値, 素因数の個数, 素因数, 素因数, 素因数...
 
-		�f�����͏��������ɏo�͂��܂��B
-		��Sample�t�H���_�� Factorization.bat ���Q�l�ɂ��ĉ������B
+		素因数は小さい順に出力します。
+		★Sampleフォルダの Factorization.bat を参考にして下さい。
 
 	> Prime64.exe /BC IN-CSV-FILE OUT-CSV-FILE
 
-		IN-CSV-FILE  ... ���̓t�@�C��
-		OUT-CSV-FILE ... �o�̓t�@�C��
+		IN-CSV-FILE  ... 入力ファイル
+		OUT-CSV-FILE ... 出力ファイル
 
-		�f���́u���v�o�͂̈ꊇ���������s���܂��B
-		���̓t�@�C���ɂ� US-ASCII �̃J���}��؂� CSV �t�@�C�����w�肵�ĉ������B
-		���̓t�@�C���̊e�s�͈ȉ��̂悤�ɂ��܂��B
+		素数の「個数」出力の一括処理を実行します。
+		入力ファイルには US-ASCII のカンマ区切り CSV ファイルを指定して下さい。
+		入力ファイルの各行は以下のようにします。
 
-			�ŏ��l�i0 �` 18446744073709551615 �̐����j, �ő�l�i0 �` 18446744073709551615 �̐����j
+			最小値（0 ～ 18446744073709551615 の整数）, 最大値（0 ～ 18446744073709551615 の整数）
 
-		�o�̓t�@�C���� US-ASCII �̃J���}��؂� CSV �t�@�C���ł��B
-		�o�̓t�@�C���̊e�s�͈ȉ��̂悤�ɂȂ�܂��B
+		出力ファイルは US-ASCII のカンマ区切り CSV ファイルです。
+		出力ファイルの各行は以下のようになります。
 
-			�ŏ��l, �ő�l, �ŏ��l����ő�l�܂ł̑f���̌�
+			最小値, 最大値, 最小値から最大値までの素数の個数
 
-		��Sample�t�H���_�� PrimeCount.bat ���Q�l�ɂ��ĉ������B
+		★Sampleフォルダの PrimeCount.bat を参考にして下さい。
 
 	> Prime64.exe [/O | /O-5] [/M MUL-NUM MUL-COLOR]0-* /US LEFT TOP RIGHT BOTTOM PRIME-COLOR NOT-PRIME-COLOR CENTER-COLOR OUT-BMP-FILE
 
-		/O   ... ��̂� = 1, 3, 5, 7, 9, ...
-		/O-5 ... 5�̔{����������̂� = 1, 3, 7, 9, 11, 13, 17, 19, ...
-		/M   ... MUL-NUM �̔{���� MUL-COLOR �ɂ��܂��B���̃I�v�V�����͕�����w��o���܂��B
+		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
+		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
+		/M   ... MUL-NUM の倍数を MUL-COLOR にします。このオプションは複数回指定出来ます。
 
-			MUL-NUM   ... 1 �` 4294967295 �̐���
-			MUL-COLOR ... RGB��6����16�i���Ŏw�肷��Bex. 80ff00
+			MUL-NUM   ... 1 ～ 4294967295 の整数
+			MUL-COLOR ... RGBを6桁の16進数で指定する。ex. 80ff00
 
-			���s�� > Prime64.exe /M 2 808000 /M 3 008080 /M 5 800080 /US -100 -100 100 100 e0e0e0 ffffff 0 out.bmp
+			実行例 > Prime64.exe /M 2 808000 /M 3 008080 /M 5 800080 /US -100 -100 100 100 e0e0e0 ffffff 0 out.bmp
 
-		LEFT   ... �o�͔͈� X �ŏ��l, -2147483647 �` 2147483648 �̐���
-		TOP    ... �o�͔͈� Y �ŏ��l, -2147483648 �` 2147483647 �̐���
-		RIGHT  ... �o�͔͈� X �ő�l, -2147483647 �` 2147483648 �̐���
-		BOTTOM ... �o�͔͈� Y �ő�l, -2147483648 �` 2147483647 �̐���
+		LEFT   ... 出力範囲 X 最小値, -2147483647 ～ 2147483648 の整数
+		TOP    ... 出力範囲 Y 最小値, -2147483648 ～ 2147483647 の整数
+		RIGHT  ... 出力範囲 X 最大値, -2147483647 ～ 2147483648 の整数
+		BOTTOM ... 出力範囲 Y 最大値, -2147483648 ～ 2147483647 の整数
 
-		PRIME-COLOR     ... �f���̃s�N�Z���F   RGB��6����16�i���Ŏw�肷��Bex. 000000
-		NOT-PRIME-COLOR ... �������̃s�N�Z���F RGB��6����16�i���Ŏw�肷��Bex. ffffff
-		CENTER-COLOR    ... ���S�̃s�N�Z���F   RGB��6����16�i���Ŏw�肷��Bex. ff0000
+		PRIME-COLOR     ... 素数のピクセル色   RGBを6桁の16進数で指定する。ex. 000000
+		NOT-PRIME-COLOR ... 合成数のピクセル色 RGBを6桁の16進数で指定する。ex. ffffff
+		CENTER-COLOR    ... 中心のピクセル色   RGBを6桁の16進数で指定する。ex. ff0000
 
-		OUT-BMP-FILE ... �o�̓t�@�C��
+		OUT-BMP-FILE ... 出力ファイル
 
-		�E�����̗�����BMP�t�@�C���ɏo�͂��܂��B
+		ウラムの螺旋をBMPファイルに出力します。
 
 	> Prime64.exe [/O | /O-5] /USC LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
 
-		/O   ... ��̂� = 1, 3, 5, 7, 9, ...
-		/O-5 ... 5�̔{����������̂� = 1, 3, 7, 9, 11, 13, 17, 19, ...
+		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
+		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
 
-		LEFT   ... �o�͔͈� X �ŏ��l, -2147483647 �` 2147483648 �̐���
-		TOP    ... �o�͔͈� Y �ŏ��l, -2147483648 �` 2147483647 �̐���
-		RIGHT  ... �o�͔͈� X �ő�l, -2147483647 �` 2147483648 �̐���
-		BOTTOM ... �o�͔͈� Y �ő�l, -2147483648 �` 2147483647 �̐���
+		LEFT   ... 出力範囲 X 最小値, -2147483647 ～ 2147483648 の整数
+		TOP    ... 出力範囲 Y 最小値, -2147483648 ～ 2147483647 の整数
+		RIGHT  ... 出力範囲 X 最大値, -2147483647 ～ 2147483648 の整数
+		BOTTOM ... 出力範囲 Y 最大値, -2147483648 ～ 2147483647 の整数
 
-		OUT-CSV-FILE ... �o�̓t�@�C��
+		OUT-CSV-FILE ... 出力ファイル
 
-		�E�����̗�����CSV�t�@�C���ɏo�͂��܂��B
-		�f���̃Z���ɂ� 1, �����łȂ��Z���ɂ� 0 ���o�͂��܂��B
+		ウラムの螺旋をCSVファイルに出力します。
+		素数のセルには 1, そうでないセルには 0 を出力します。
 
 	> Prime64.exe [/O | /O-5] /USCN LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
 
-		/O   ... ��̂� = 1, 3, 5, 7, 9, ...
-		/O-5 ... 5�̔{����������̂� = 1, 3, 7, 9, 11, 13, 17, 19, ...
+		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
+		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
 
-		LEFT   ... �o�͔͈� X �ŏ��l, -2147483647 �` 2147483648 �̐���
-		TOP    ... �o�͔͈� Y �ŏ��l, -2147483648 �` 2147483647 �̐���
-		RIGHT  ... �o�͔͈� X �ő�l, -2147483647 �` 2147483648 �̐���
-		BOTTOM ... �o�͔͈� Y �ő�l, -2147483648 �` 2147483647 �̐���
+		LEFT   ... 出力範囲 X 最小値, -2147483647 ～ 2147483648 の整数
+		TOP    ... 出力範囲 Y 最小値, -2147483648 ～ 2147483647 の整数
+		RIGHT  ... 出力範囲 X 最大値, -2147483647 ～ 2147483648 の整数
+		BOTTOM ... 出力範囲 Y 最大値, -2147483648 ～ 2147483647 の整数
 
-		OUT-CSV-FILE ... �o�̓t�@�C��
+		OUT-CSV-FILE ... 出力ファイル
 
-		�E�����̗����i�ԍ��j��CSV�t�@�C���ɏo�͂��܂��B
+		ウラムの螺旋（番号）をCSVファイルに出力します。
 
 
 ----
-�\�[�X�R�[�h
+ソースコード
 
 	https://github.com/stackprobe/Factory/blob/master/Program/Prime64/Prime64.c
 
