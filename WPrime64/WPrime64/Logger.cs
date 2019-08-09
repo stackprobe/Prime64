@@ -6,7 +6,7 @@ using System.IO;
 
 namespace WPrime64
 {
-	public class Logger
+	public static class Logger
 	{
 		public static string LOG_FILE
 		{

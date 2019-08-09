@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WPrime64
 {
-	public class JString
+	public static class JString
 	{
 		/// <summary>
 		/// CR, CR-LF, LF -> LF

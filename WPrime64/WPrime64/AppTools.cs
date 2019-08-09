@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WPrime64
 {
-	public class AppTools
+	public static class AppTools
 	{
 		public static void CheckOutputFile(string outFile)
 		{

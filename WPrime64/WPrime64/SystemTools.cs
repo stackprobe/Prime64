@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WPrime64
 {
-	public class SystemTools
+	public static class SystemTools
 	{
 		public static string GetTmp()
 		{

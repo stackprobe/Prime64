@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace WPrime64
 {
-	public class StringTools
+	public static class StringTools
 	{
 		public static readonly Encoding ENCODING_SJIS = Encoding.GetEncoding(932);
 

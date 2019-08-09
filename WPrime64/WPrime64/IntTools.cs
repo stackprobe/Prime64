@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace WPrime64
 {
-	public class IntTools
+	public static class IntTools
 	{
 		public static void Normalize(TextBox tb)
 		{
