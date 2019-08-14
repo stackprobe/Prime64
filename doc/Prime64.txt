@@ -176,9 +176,3 @@
 
 		ウラムの螺旋（番号）をCSVファイルに出力します。
 
-
-----
-ソースコード
-
-	https://github.com/stackprobe/Factory/blob/master/Program/Prime64/Prime64.c
-
