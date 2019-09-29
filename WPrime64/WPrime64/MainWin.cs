@@ -17,6 +17,8 @@ namespace WPrime64
 		public MainWin()
 		{
 			InitializeComponent();
+
+			Gnd.I.MainWin = this;
 		}
 
 		private void MainWin_Load(object sender, EventArgs e)
@@ -94,6 +96,7 @@ namespace WPrime64
 		private void MainWin_Shown(object sender, EventArgs e)
 		{
 			this.Chkファイルを分割して出力.Checked = Gnd.I.SettingData.OutFileDiv;
+			this.Chkミラーラビン法を使う.Checked = Gnd.I.SettingData.UseMillerRabinTestMode;
 			this.Resized_Tabウラムの螺旋();
 			this.US_Changed(true);
 			this.MinValue.Focus();
@@ -224,7 +227,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /P " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" " + this.CmdPartOptUMRTM() + "/P " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
@@ -299,7 +302,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /LH " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" " + this.CmdPartOptUMRTM() + "/LH " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
@@ -362,7 +365,7 @@ namespace WPrime64
 
 			WorkDir workDir = new WorkDir();
 			string outFile = workDir.MakePath();
-			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" /F " + str);
+			this.ProcMan.Start(Gnd.I.Prime64File, "//MOLP " + StringTools.OUT_PFX + " //O \"" + outFile + "\" " + this.CmdPartOptUMRTM() + "/F " + str);
 
 			using (BusyDlg f = new BusyDlg())
 			{
@@ -917,6 +920,20 @@ namespace WPrime64
 				this.Btn_US.Focus();
 				e.Handled = true;
 			}
+		}
+
+		private void Chkミラーラビン法を使う_CheckedChanged(object sender, EventArgs e)
+		{
+			// noop
+		}
+
+		public string CmdPartOptUMRTM()
+		{
+			if (this.Chkミラーラビン法を使う.Checked)
+			{
+				return "/UMRTM ";
+			}
+			return "";
 		}
 	}
 }

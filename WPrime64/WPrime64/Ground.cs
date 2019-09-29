@@ -46,5 +46,7 @@ namespace WPrime64
 		public readonly string PRIME_MIN_OVER_UL = "18446744073709551629"; // 2^64 以上で最小の素数 == 2^64 + 13
 
 		public readonly string FACTORY_COMMON_MUTEX = "cerulean.charlotte Factory common mutex object"; // @ C:/Factoty/Common/Mutex.c
+
+		public MainWin MainWin;
 	}
 }

@@ -70,6 +70,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.US_T = new System.Windows.Forms.TextBox();
 			this.Btn_US = new System.Windows.Forms.Button();
+			this.Chkミラーラビン法を使う = new System.Windows.Forms.CheckBox();
 			this.MainTab.SuspendLayout();
 			this.Tab出力.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -583,11 +584,24 @@
 			this.Btn_US.UseVisualStyleBackColor = true;
 			this.Btn_US.Click += new System.EventHandler(this.Btn_US_Click);
 			// 
+			// Chkミラーラビン法を使う
+			// 
+			this.Chkミラーラビン法を使う.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.Chkミラーラビン法を使う.AutoSize = true;
+			this.Chkミラーラビン法を使う.Location = new System.Drawing.Point(16, 298);
+			this.Chkミラーラビン法を使う.Name = "Chkミラーラビン法を使う";
+			this.Chkミラーラビン法を使う.Size = new System.Drawing.Size(353, 24);
+			this.Chkミラーラビン法を使う.TabIndex = 1;
+			this.Chkミラーラビン法を使う.Text = "一部の素数判定にミラー・ラビン素数判定法を使用する";
+			this.Chkミラーラビン法を使う.UseVisualStyleBackColor = true;
+			this.Chkミラーラビン法を使う.CheckedChanged += new System.EventHandler(this.Chkミラーラビン法を使う_CheckedChanged);
+			// 
 			// MainWin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(558, 296);
+			this.ClientSize = new System.Drawing.Size(558, 334);
+			this.Controls.Add(this.Chkミラーラビン法を使う);
 			this.Controls.Add(this.MainTab);
 			this.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -613,6 +627,7 @@
 			this.Tabウラムの螺旋.ResumeLayout(false);
 			this.Tabウラムの螺旋.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -659,6 +674,7 @@
 		private System.Windows.Forms.Label SizeInfo;
 		private System.Windows.Forms.CheckBox Chk改行しない;
 		private System.Windows.Forms.CheckBox Chkファイルを分割して出力;
+		private System.Windows.Forms.CheckBox Chkミラーラビン法を使う;
 	}
 }
 

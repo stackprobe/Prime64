@@ -104,6 +104,7 @@ namespace WPrime64
 			this.ProcMan = new ProcessMan();
 			this.ProcMan.Start(
 				Gnd.I.Prime64File,
+				Gnd.I.MainWin.CmdPartOptUMRTM() +
 				"/US2 " +
 				this.L + " " +
 				this.T + " " +

@@ -130,7 +130,15 @@ namespace WPrime64
 			this.ProcMan = new ProcessMan();
 			this.ProcMan.Start(
 				Gnd.I.Prime64File,
-				command + " " + this.Minval + " " + this.Maxval + " \"" + this.OutFile + "\" " + this.CancelEvName + " " + this.ReportEvName + " " + this.ReportMtxName + " \"" + this.ReportFile + "\""
+				Gnd.I.MainWin.CmdPartOptUMRTM() +
+				command + " " +
+				this.Minval + " " +
+				this.Maxval + " " +
+				"\"" + this.OutFile + "\" " +
+				this.CancelEvName + " " +
+				this.ReportEvName + " " +
+				this.ReportMtxName + " " +
+				"\"" + this.ReportFile + "\""
 				);
 		}
 

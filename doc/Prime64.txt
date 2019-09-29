@@ -15,13 +15,13 @@
 ----
 コマンド引数
 
-	> Prime64.exe /P n
+	> Prime64.exe [/UMRTM] /P n
 
 		n ... 0 ～ 18446744073709551615 の整数
 
 		n が素数であれば IS_PRIME, そうでなければ IS_NOT_PRIME を表示します。
 
-	> Prime64.exe /F n
+	> Prime64.exe [/UMRTM] /F n
 
 		n ... 0 ～ 18446744073709551615 の整数
 
@@ -29,19 +29,19 @@
 		1 の場合は 1 を表示します。
 		0 の場合は何も表示しません。
 
-	> Prime64.exe /L n
+	> Prime64.exe [/UMRTM] /L n
 
 		n ... 0 ～ 18446744073709551615 の整数
 
 		n より小さい最大の素数を表示します。該当する素数が無ければ 0 を表示します。
 
-	> Prime64.exe /H n
+	> Prime64.exe [/UMRTM] /H n
 
 		n ... 0 ～ 18446744073709551615 の整数
 
 		n より大きい最小の素数を表示します。該当する素数が 2^64 以上の場合は 0 を表示します。
 
-	> Prime64.exe /LH n
+	> Prime64.exe [/UMRTM] /LH n
 
 		n ... 0 ～ 18446744073709551615 の整数
 
@@ -49,7 +49,7 @@
 		・n より小さい最大の素数, 該当する素数が無ければ 0
 		・n より大きい最小の素数, 該当する素数が 2^64 以上の場合は 0
 
-	> Prime64.exe /R MIN-VAL MAX-VAL OUT-FILE
+	> Prime64.exe [/UMRTM] /R MIN-VAL MAX-VAL OUT-FILE
 
 		MIN-VAL  ... 最小値, 0 ～ 18446744073709551615 の整数
 		MAX-VAL  ... 最大値, 0 ～ 18446744073709551615 の整数
@@ -59,7 +59,7 @@
 		該当する素数が複数ある場合、小さい順に出力します。
 		出力ファイルは US-ASCII のテキストファイルです。
 
-	> Prime64.exe /C MIN-VAL MAX-VAL OUT-FILE
+	> Prime64.exe [/UMRTM] /C MIN-VAL MAX-VAL OUT-FILE
 
 		MIN-VAL  ... 最小値, 0 ～ 18446744073709551615 の整数
 		MAX-VAL  ... 最大値, 0 ～ 18446744073709551615 の整数
@@ -68,7 +68,7 @@
 		最小値から最大値までの素数の「個数」を出力ファイルに出力します。
 		出力ファイルは US-ASCII のテキストファイルです。
 
-	> Prime64.exe /BP IN-CSV-FILE OUT-CSV-FILE
+	> Prime64.exe [/UMRTM] /BP IN-CSV-FILE OUT-CSV-FILE
 
 		IN-CSV-FILE  ... 入力ファイル
 		OUT-CSV-FILE ... 出力ファイル
@@ -86,7 +86,7 @@
 
 		★Sampleフォルダの Prime.bat を参考にして下さい。
 
-	> Prime64.exe /BF IN-CSV-FILE OUT-CSV-FILE
+	> Prime64.exe [/UMRTM] /BF IN-CSV-FILE OUT-CSV-FILE
 
 		IN-CSV-FILE  ... 入力ファイル
 		OUT-CSV-FILE ... 出力ファイル
@@ -105,7 +105,7 @@
 		素因数は小さい順に出力します。
 		★Sampleフォルダの Factorization.bat を参考にして下さい。
 
-	> Prime64.exe /BC IN-CSV-FILE OUT-CSV-FILE
+	> Prime64.exe [/UMRTM] /BC IN-CSV-FILE OUT-CSV-FILE
 
 		IN-CSV-FILE  ... 入力ファイル
 		OUT-CSV-FILE ... 出力ファイル
@@ -123,7 +123,7 @@
 
 		★Sampleフォルダの PrimeCount.bat を参考にして下さい。
 
-	> Prime64.exe [/O | /O-5] [/M MUL-NUM MUL-COLOR]0-* /US LEFT TOP RIGHT BOTTOM PRIME-COLOR NOT-PRIME-COLOR CENTER-COLOR OUT-BMP-FILE
+	> Prime64.exe [/UMRTM] [/O | /O-5] [/M MUL-NUM MUL-COLOR]0-* /US LEFT TOP RIGHT BOTTOM PRIME-COLOR NOT-PRIME-COLOR CENTER-COLOR OUT-BMP-FILE
 
 		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
 		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
@@ -147,7 +147,7 @@
 
 		ウラムの螺旋をBMPファイルに出力します。
 
-	> Prime64.exe [/O | /O-5] /USC LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
+	> Prime64.exe [/UMRTM] [/O | /O-5] /USC LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
 
 		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
 		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
@@ -162,7 +162,7 @@
 		ウラムの螺旋をCSVファイルに出力します。
 		素数のセルには 1, そうでないセルには 0 を出力します。
 
-	> Prime64.exe [/O | /O-5] /USCN LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
+	> Prime64.exe [/UMRTM] [/O | /O-5] /USCN LEFT TOP RIGHT BOTTOM OUT-CSV-FILE
 
 		/O   ... 奇数のみ = 1, 3, 5, 7, 9, ...
 		/O-5 ... 5の倍数を除く奇数のみ = 1, 3, 7, 9, 11, 13, 17, 19, ...
@@ -176,3 +176,8 @@
 
 		ウラムの螺旋（番号）をCSVファイルに出力します。
 
+
+----
+共通引数
+
+	/UMRTM ... 一部の素数判定にミラー・ラビン素数判定法 (K=50) を使用します。

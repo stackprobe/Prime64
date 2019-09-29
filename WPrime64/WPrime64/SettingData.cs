@@ -23,6 +23,7 @@ namespace WPrime64
 				this.CheckDiskFreeOnOutput = int.Parse(this.NextLine()) != 0;
 				this.OutFileDiv = int.Parse(this.NextLine()) != 0;
 				this.LogInfo = int.Parse(this.NextLine()) != 0;
+				this.UseMillerRabinTestMode = int.Parse(this.NextLine()) != 0;
 				// ここへ追加
 			}
 			catch
@@ -40,6 +41,7 @@ namespace WPrime64
 				WriteInfo("CheckDiskFreeOnOutput: " + this.CheckDiskFreeOnOutput);
 				WriteInfo("OutFileDiv: " + this.OutFileDiv);
 				WriteInfo("LogInfo: " + this.LogInfo);
+				WriteInfo("UseMillerRabinTestMode: " + this.UseMillerRabinTestMode);
 				// ここへ追加
 			}
 		}
@@ -68,6 +70,7 @@ namespace WPrime64
 		public bool CheckDiskFreeOnOutput = true;
 		public bool OutFileDiv = false;
 		public bool LogInfo = true;
+		public bool UseMillerRabinTestMode = false;
 		// ここへ追加
 
 		public void WriteInfo(Object e)
