@@ -590,9 +590,9 @@
 			this.Chkミラーラビン法を使う.AutoSize = true;
 			this.Chkミラーラビン法を使う.Location = new System.Drawing.Point(16, 298);
 			this.Chkミラーラビン法を使う.Name = "Chkミラーラビン法を使う";
-			this.Chkミラーラビン法を使う.Size = new System.Drawing.Size(353, 24);
+			this.Chkミラーラビン法を使う.Size = new System.Drawing.Size(249, 24);
 			this.Chkミラーラビン法を使う.TabIndex = 1;
-			this.Chkミラーラビン法を使う.Text = "一部の素数判定にミラー・ラビン素数判定法を使用する";
+			this.Chkミラーラビン法を使う.Text = "ミラー・ラビン素数判定法を使用する";
 			this.Chkミラーラビン法を使う.UseVisualStyleBackColor = true;
 			this.Chkミラーラビン法を使う.CheckedChanged += new System.EventHandler(this.Chkミラーラビン法を使う_CheckedChanged);
 			// 
