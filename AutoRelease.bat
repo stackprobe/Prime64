@@ -6,7 +6,7 @@ PAUSE
 CALL ff
 cx **
 
-CD %~dp0.
+CD /D %~dp0.
 
 IF NOT EXIST WPrime64\. GOTO END
 
