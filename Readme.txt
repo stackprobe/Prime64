@@ -7,5 +7,5 @@ Prime64
 ビルド済み配布物
 ----------------
 
-http://stackprobe.dip.jp/Prime64
+http://stackprobe.ccsp.mydns.jp/Prime64
 
